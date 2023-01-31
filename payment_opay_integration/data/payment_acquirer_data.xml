@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo >
+    <data noupdate="1">
+        <record id="payment_acquirer_opay" model="payment.acquirer">
+            <field name="name">OPay</field>
+            <field name="image_128" type="base64" file="payment_opay_integration/static/src/img/opay_log.jpg"/>
+            <field name="provider">opay</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="pre_msg">
+                <![CDATA[<p>You will be redirected to the opay website after clicking on the payment button.</p>]]>
+            </field>
+            <field name="opay_merchant_account">dummy</field>
+            <field name="opay_seller_account">dummy</field>
+            <field name="opay_pdt_token">dummy</field>
+            <field name="opay_checkout_api_url">https://this.is.an.url</field>
+            <!--            <field name="opay_email_account">dummy</field>-->
+            <field name="opay_api_username">dummy</field>
+            <field name="opay_api_password">dummy</field>
+        </record>
+
+        <!-- Payment methods -->
+        <record id="payment_method_opay_id" model="account.payment.method">
+            <field name="name">OPay</field>
+            <field name="code">opay</field>
+            <field name="payment_type">inbound</field>
+        </record>
+    </data>
+
+</odoo>
